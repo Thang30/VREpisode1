@@ -279,13 +279,13 @@ public class Game_Manager : MonoBehaviour
     {
         foreach (VRTK_InteractableObject inter in FindObjectsOfType<VRTK_InteractableObject>())
         {
-            if (inter.GetComponent<Collider>() != null)
+            if (inter.GetComponent<Collider>() != null && WaterMovement.feet != null && WaterMovement.body != null && WaterMovement.head != null)
             {
                 Physics.IgnoreCollision(WaterMovement.feet, inter.GetComponent<Collider>());
                 Physics.IgnoreCollision(WaterMovement.body, inter.GetComponent<Collider>());
                 Physics.IgnoreCollision(WaterMovement.head, inter.GetComponent<Collider>());
             }
-            if (inter.GetComponentsInChildren<Collider>() != null)
+            if (inter.GetComponentsInChildren<Collider>() != null && WaterMovement.feet != null && WaterMovement.body != null && WaterMovement.head != null)
             {
                 foreach (Collider col in inter.GetComponentsInChildren<Collider>())
                 {
